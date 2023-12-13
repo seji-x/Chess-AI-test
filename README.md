@@ -1,8 +1,10 @@
 # Chess-Game-AI
 
 ## Use
-1 https://visualstudio.microsoft.com/
+1 https://visualstudio.microsoft.com/ 
+
 2 https://www.python.org/downloads/
+
 3 docs: https://www.w3schools.com/
 
 ## Reward performance
