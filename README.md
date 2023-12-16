@@ -72,3 +72,103 @@ class ChessGame:
 chess_game = ChessGame()
 chess_game.display_board()
 ```
+##
+### Data Structure Design
+```
+class ChessPiece:
+    def __init__(self, color):
+        self.color = color
+
+class Pawn(ChessPiece):
+    def __init__(self, color):
+        super().__init__(color)
+
+class ChessBoard:
+    def __init__(self):
+        self.board = [[None] * 8 for _ in range(8)]
+
+    def initialize_board(self):
+        # Initialize the board with pieces
+        pass
+
+    def display_board(self):
+        # Display the current state of the board
+        pass
+
+class Player:
+    def __init__(self, color):
+        self.color = color
+
+    def make_move(self, from_position, to_position):
+        # Handle player's move
+        pass
+```
+
+### Chessboard Display
+```
+class ChessGame:
+    def __init__(self):
+        self.board = ChessBoard()
+        self.board.initialize_board()
+        self.player1 = Player("white")
+        self.player2 = Player("black")
+        self.current_player = self.player1
+
+        # Pygame setup
+        pygame.init()
+        self.screen = pygame.display.set_mode((800, 600))
+        pygame.display.set_caption("Chess Game")
+
+    def draw_board(self):
+        # Draw the chess board using Pygame
+        pass
+
+    def run(self):
+        while True:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    quit()
+
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    # Handle player's move
+                    pass
+
+            self.draw_board()
+            pygame.display.update()
+
+if __name__ == "__main__":
+    game = ChessGame()
+    game.run()
+```
+### Move Processing and Playing Logic
+```
+# Trong class ChessGame:
+def handle_player_move(self, event):
+    mouse_position = pygame.mouse.get_pos()
+    clicked_column = mouse_position[0] // (800 // 8)
+    clicked_row = mouse_position[1] // (600 // 8)
+
+    if self.board.board[clicked_row][clicked_column] is not None:
+        piece = self.board.board[clicked_row][clicked_column]
+        if piece.color == self.current_player.color:
+            # Player clicked on their own piece
+            pass
+    else:
+        # Player clicked on an empty square
+        pass
+
+# Thêm vào vòng lặp while:
+if event.type == pygame.MOUSEBUTTONDOWN:
+    self.handle_player_move(event)
+```
+### Build AI using Minimax
+```
+def ai_make_move(self):
+    # Implement Minimax algorithm to make AI move
+    pass
+
+# Thêm vào vòng lặp while:
+if self.current_player == self.player2:
+    self.ai_make_move()
+```
