@@ -5,7 +5,7 @@
 
 2 https://www.python.org/downloads/
 
-3 docs: https://www.w3schools.com/
+3 https://www.w3schools.com/
 
 ## Reward performance
 1. Create a Basic ChessPiece Class:
